@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Участвуйте в розыгрыше iPhone 15 Pro!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .content {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .iphone-image {
+            max-width: 200px;
+            height: auto;
+            margin: 20px;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #104e8b;
+        }
+        .survey {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .survey h3 {
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+        .survey label {
+            display: block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .survey input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function showSelected() {
+            var survey = document.forms[0];
+            var output = document.getElementById('output');
+            output.innerHTML = '';
+            for (var i = 0; i < survey.length; i++) {
+                if (survey[i].checked) {
+                    output.innerHTML += '<p>' + survey[i].name + ': ' + survey[i].value + '</p>';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Розыгрыш iPhone 15 Pro</h1>
+    </header>
+    <main>
+        <img src="iphone-15-pro-left.jpg" alt="iPhone 15 Pro" class="iphone-image">
+        <div class="content">
+            <h2>Примите участие в розыгрыше iPhone 15 Pro!</h2>
+            <p>Заполните форму по ссылке ниже, чтобы участвовать в розыгрыше новейшего iPhone 15 Pro.</p>
+            <a href="https://example.com" class="btn">Принять участие</a>
+        </div>
+        <img src="iphone-15-pro-right.jpg" alt="iPhone 15 Pro" class="iphone-image">
+
+        <div class="survey">
+            <h3>Опросник</h3>
+            <form oninput="showSelected()">
+                <label>
+                    Как вы узнали о нашем розыгрыше?
+                    <br>
+                    <input type="radio" name="Как вы узнали о нашем розыгрыше?" value="Социальные сети"> Социальные сети
+                    <br>
+                    <input type="radio" name="Как вы узнали о нашем розыгрыше?" value="Друзья или семья"> Друзья или семья
+                    <br>
+                    <input type="radio" name="Как вы узнали о нашем розыгрыше?" value="Реклама в интернете"> Реклама в интернете
+                    <br>
+                    <input type="radio" name="Как вы узнали о нашем розыгрыше?" value="Другой"> Другой
+                </label>
+                <label>
+                    Что вам больше всего нравится в iPhone 15 Pro?
+                    <br>
+                    <input type="radio" name="Что вам больше всего нравится в iPhone 15 Pro?" value="Камера"> Камера
+                    <br>
+                    <input type="radio" name="Что вам больше всего нравится в iPhone 15 Pro?" value="Производительность"> Производительность
+                    <br>
+                    <input type="radio" name="Что вам больше всего нравится в iPhone 15 Pro?" value="Дизайн"> Дизайн
+                    <br>
+                    <input type="radio" name="Что вам больше всего нравится в iPhone 15 Pro?" value="Батарея"> Батарея
+                </label>
+                <label>
+                    Планируете ли вы покупать новый iPhone в ближайшее время?
+                    <br>
+                    <input type="radio" name="Планируете ли вы покупать новый iPhone в ближайшее время?" value="Да"> Да
+                    <br>
+                    <input type="radio" name="Планируете ли вы покупать новый iPhone в ближайшее время?" value="Нет"> Нет
+                </label>
+            </form>
+            <button type="button" class="btn" onclick="showSelected()">Отправить ответы</button>
+            <div id="output"></div>
+        </div>
+    </main>
+</body>
+</html>
